@@ -4,5 +4,4 @@ FROM registry.gitlab.com/fdroid/repomaker:latest
 WORKDIR /repomaker
 COPY settings_docker.py ./repomaker/
 # make database and media folder writable for our user
-RUN chown www-data /repomaker/data/db.sqlite3
-RUN chown www-data /repomaker/data/media
+RUN chown www-data /repomaker/data
