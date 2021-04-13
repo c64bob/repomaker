@@ -11,8 +11,7 @@ DATABASES = {
 
 SINGLE_USER_MODE = True
 
-#ALLOWED_HOSTS = [os.getenv('REPOMAKER_HOSTNAME')]
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [os.getenv('REPOMAKER_HOSTNAME')]
 SECRET_KEY = os.getenv('REPOMAKER_SECRET_KEY')
 DEBUG = True
 
@@ -20,10 +19,11 @@ DEFAULT_REPO_STORAGE = [
     (os.path.join(DATA_DIR, 'repos'), 'https://%s/repos/' % os.getenv('REPOMAKER_HOSTNAME')),
 ]
 
-LOGIN_REDIRECT_URL = "/"
+
+#LOGIN_REDIRECT_URL = "/"
 # http://django-allauth.readthedocs.io/en/latest/installation.html
-INSTALLED_APPS += [
-    'allauth',
+#INSTALLED_APPS += [
+#    'allauth',
     # 'allauth.socialaccount',
     # 'allauth.socialaccount.providers.amazon',
     # 'allauth.socialaccount.providers.baidu',
@@ -40,17 +40,17 @@ INSTALLED_APPS += [
     # 'allauth.socialaccount.providers.stackexchange',
     # 'allauth.socialaccount.providers.twitter',
     # 'allauth.socialaccount.providers.weibo',
-]
-AUTHENTICATION_BACKENDS = (
-    'django.contrib.auth.backends.ModelBackend',
-    'allauth.account.auth_backends.AuthenticationBackend',
-)
-ACCOUNT_FORMS = {
-    'login': 'repomaker.views.RmLoginForm',
-    'reset_password': 'repomaker.views.RmResetPasswordForm',
-    'signup': 'repomaker.views.RmSignupForm',
-}
-ACCOUNT_EMAIL_VERIFICATION = "none"
+#]
+#AUTHENTICATION_BACKENDS = (
+#    'django.contrib.auth.backends.ModelBackend',
+#    'allauth.account.auth_backends.AuthenticationBackend',
+#)
+#ACCOUNT_FORMS = {
+#    'login': 'repomaker.views.RmLoginForm',
+#    'reset_password': 'repomaker.views.RmResetPasswordForm',
+#    'signup': 'repomaker.views.RmSignupForm',
+#}
+#ACCOUNT_EMAIL_VERIFICATION = "none"
 
 if DEBUG:
     SASS_PROCESSOR_ENABLED = False
