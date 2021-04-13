@@ -11,9 +11,10 @@ DATABASES = {
 
 SINGLE_USER_MODE = True
 
-ALLOWED_HOSTS = [os.getenv('REPOMAKER_HOSTNAME')]
+#ALLOWED_HOSTS = [os.getenv('REPOMAKER_HOSTNAME')]
+ALLOWED_HOSTS = ['*']
 SECRET_KEY = os.getenv('REPOMAKER_SECRET_KEY')
-DEBUG = False
+DEBUG = True
 
 DEFAULT_REPO_STORAGE = [
     (os.path.join(DATA_DIR, 'repos'), 'https://%s/repos/' % os.getenv('REPOMAKER_HOSTNAME')),
