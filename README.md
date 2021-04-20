@@ -1,2 +1,2 @@
 # repomaker
-Fork of Repomaker, single user, sqlite
+Repomaker with own configuration, single user, sqlite
